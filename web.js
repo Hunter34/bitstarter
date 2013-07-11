@@ -8,10 +8,8 @@ var buf = new Buffer(indexhtmlin);
 
 var indexhtml = buf.toString('utf-8');
 
-console.log(indexhtml);
-
 app.get('/', function(request, response) {
-  response.send(buf);
+  response.send(indexhtml);
 });
 
 var port = process.env.PORT || 5000;
