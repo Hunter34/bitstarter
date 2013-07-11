@@ -6,10 +6,12 @@ var indexhtmlin = fs.readFileSync("index.html");
 
 var buf = new Buffer(indexhtmlin);
 
-var indexhtml = buf.toString('utf8',buf);
+var indexhtml = buf.toString('utf-8');
+
+console.log(indexhtml);
 
 app.get('/', function(request, response) {
-  response.send(indexhtml);
+  response.send(buf);
 });
 
 var port = process.env.PORT || 5000;
